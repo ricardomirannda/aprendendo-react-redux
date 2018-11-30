@@ -7,7 +7,17 @@ module.exports = {
         filename: './bundle.js'
     },
     devServer: {
-        port: 3003,
+        port: 3000,
         contentBase: './public'
+    },
+    module: {
+        loaders: [{
+            test: /.js?$/,
+            loader: 'babel-loader',
+            exclude: /node_modules/,
+            query: {
+                presets: ['es2015']
+            }
+        }]
     }
 }
